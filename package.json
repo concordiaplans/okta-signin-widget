@@ -20,7 +20,7 @@
   ],
   "main": "./dist/js/okta-sign-in.entry.js",
   "scripts": {
-    "clean": "rm -rf target && rm -rf dist",
+    "clean": "if exist target rmdir /S /Q target && if exist dist rmdir /S /Q dist",
     "lint:report": "grunt lint --checkstyle",
     "lint": "grunt lint",
     "test": "grunt test",
