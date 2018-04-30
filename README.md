@@ -9,4 +9,4 @@ Refer to the [main project](https://github.com/okta/okta-signin-widget/) for mor
 
 ## Additional Feature flags
 
-- **features.routerRoot** - Set a URL path to the root of a site (e.g. '/myaccount') for routing in a subdirectory. **features.routerRoot** must be set to `true`. Defaults to `/`.
+- **features.routerRoot** - Set a URL path to the root of a site (e.g. '/myaccount') for routing in a subdirectory. **features.router** must be set to `true`. Defaults to `/`.
