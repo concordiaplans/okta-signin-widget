@@ -264,6 +264,7 @@ function (Okta, Backbone, BrowserFeatures, RefreshAuthStateController, Settings,
 
     start: function () {
       var pushState = false;
+      var root = '/';
       // Support for browser's back button.
       if (window.addEventListener && this.settings.get('features.router')) {
         window.addEventListener('popstate', _.bind(function(e) {
@@ -274,8 +275,12 @@ function (Okta, Backbone, BrowserFeatures, RefreshAuthStateController, Settings,
           }
         }, this));
         pushState = BrowserFeatures.supportsPushState();
+			
+        if (this.settings.get('features.routerRoot')) {
+          root = this.settings.get('features.routerRoot');
+        }
       }
-      Okta.Router.prototype.start.call(this, { pushState: pushState });
+      Okta.Router.prototype.start.call(this, { root: root, pushState: pushState });
     },
 
     hide: function () {
