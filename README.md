@@ -1,5 +1,5 @@
 <!-- START GITHUB ONLY -->
-[![npm version](https://img.shields.io/npm/v/@okta/okta-signin-widget.svg?style=flat-square)](https://www.npmjs.com/package/@concordiaplans/okta-signin-widget)
+[![npm version](https://img.shields.io/npm/v/@concordiaplans/okta-signin-widget.svg?style=flat-square)](https://www.npmjs.com/package/@concordiaplans/okta-signin-widget))
 <!-- END GITHUB ONLY -->
 
 Okta Sign-In Widget
