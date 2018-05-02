@@ -49,7 +49,8 @@
 
 function createShiftArr(step) {
 
-	var space = '    ';
+	var space = '    ',
+		ix;
 	
 	if ( isNaN(parseInt(step)) ) {  // argument is string
 		space = step;
