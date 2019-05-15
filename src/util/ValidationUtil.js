@@ -13,14 +13,44 @@
 define(['okta'], function (Okta) {
 
   var fn = {};
-
   // Validate the 'username' field on the model.
   fn.validateUsername = function (model) {
     var username = model.get('username');
+  
     if (username && username.length > 256) {
       return {
         username: Okta.loc('model.validation.field.username', 'login')
-      };
+      }
+    }
+
+    var returnObj;
+
+    var url = Okta.loc('primaryauth.CPSAPI.url')+ Okta.loc('primaryauth.CPSAPI.emailValidationPath')+username;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, false);
+    console.log("Validating username against below url: ")
+    console.log(Okta.loc('primaryauth.CPSAPI.url')+username);
+    xhr.onload = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 412) {
+          returnObj = {
+            username: Okta.loc('model.validation.field.emailDoesNotExist', 'login')
+          };
+        } else if(xhr.status === 400){
+          returnObj = {
+            username: Okta.loc('model.validation.field.invalidEmailFormat', 'login')
+          };
+        }
+      }
+    };
+    
+    xhr.onerror = function(e){
+    }
+
+    xhr.send(null);
+
+    if(returnObj !== 'undefined'){
+      return returnObj;
     }
   };
 

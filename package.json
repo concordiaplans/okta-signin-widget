@@ -1,7 +1,7 @@
 {
   "name": "@concordiaplans/okta-signin-widget",
   "description": "The Okta Sign-In Widget",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/concordiaplans/okta-signin-widget",
   "license": "Apache-2.0",
   "repository": {
@@ -20,7 +20,7 @@
   ],
   "main": "./dist/js/okta-sign-in.entry.js",
   "scripts": {
-    "clean": "if exist target rmdir /S /Q target && if exist dist rmdir /S /Q dist",
+    "clean": "rm -rf target && rm -rf dist",
     "lint:report": "grunt lint --checkstyle",
     "lint": "grunt lint",
     "test": "grunt test",
