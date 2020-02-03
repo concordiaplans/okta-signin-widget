@@ -32,7 +32,7 @@ function (_, $, TemplateUtil, StringUtil, BaseView,
         {{/if}}\
       {{/unless}}\
       {{#if subtitle}}\
-        <p class="okta-form-subtitle o-form-explain" data-se="o-form-explain">{{subtitle}}</p>\
+        <p class="okta-form-subtitle o-form-explain" data-se="o-form-explain">{{{subtitle}}}</p>\
       {{/if}}\
       <div class="o-form-error-container" data-se="o-form-error-container"></div>\
       <div class="o-form-fieldset-container" data-se="o-form-fieldset-container"></div>\
